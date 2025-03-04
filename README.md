@@ -29,6 +29,7 @@ Edit Greeting Messages: The Greeting App will allow editing of existing greeting
 Delete Greeting Messages: The Greeting App will be able to delete greeting messages from the repository.<br><br>
 🛠️ Running the Application<br><br><br>
 
+-----<br>
 
 🚨 User Authentication Module<br>
 Create an API where users can register and log in using their email and password. The system will store user details in the database, validate input fields, and return appropriate responses. Additionally, implement a token-based approach for authentication.<br><br>
