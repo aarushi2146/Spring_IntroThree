@@ -27,7 +27,34 @@ Find Greeting by ID: Retrieve a greeting message from the repository by its ID.<
 List All Greetings: Display all the greeting messages stored in the repository.<br><br>
 Edit Greeting Messages: The Greeting App will allow editing of existing greeting messages in the repository.<br><br>
 Delete Greeting Messages: The Greeting App will be able to delete greeting messages from the repository.<br><br>
-🛠️ Running the Application<br><br>
+🛠️ Running the Application<br><br><br>
+
+
+🚨 User Authentication Module<br>
+Create an API where users can register and log in using their email and password. The system will store user details in the database, validate input fields, and return appropriate responses. Additionally, implement a token-based approach for authentication.<br><br>
+
+📝 Objective:<br>
+Create an API that allows users to register with their details while ensuring proper validation.<br><br>
+
+🔑 User Authentication Features:<br>
+User Registration:<br><br>
+
+Validate user input fields such as first name, last name, email, and password.<br>
+Ensure the email is unique before registering.<br>
+Encrypt user passwords for security.<br>
+User Login:<br>
+
+Validate user credentials using the stored encrypted password.<br>
+Return a JWT token for valid logins.<br>
+Token-Based Authentication:<br>
+
+Implement a JWT token mechanism for secure user authentication after login.<br>
+🚀 Technology Stack:<br><br>
+Spring Boot for backend development<br>
+Spring Security for authentication<br>
+Spring Data JPA for database interaction<br>
+JWT for token-based authentication<br>
+H2 Database (or any other preferred database for development<br><br>
 
 
 -----<br>
