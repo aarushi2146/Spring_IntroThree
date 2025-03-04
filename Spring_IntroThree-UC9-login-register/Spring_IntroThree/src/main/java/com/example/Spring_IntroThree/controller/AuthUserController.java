@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.Spring_IntroThree.controller;
 
 
@@ -38,3 +39,45 @@ public class AuthUserController {
         return ResponseEntity.ok(Map.of("message", "Login successful!", "token", token));
     }
 }
+=======
+package com.example.Spring_IntroThree.controller;
+
+
+import com.example.Spring_IntroThree.model.AuthUser;
+import com.example.Spring_IntroThree.Service.AuthenticationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/auth")
+public class AuthUserController {
+
+    @Autowired
+    private AuthenticationService authenticationService;
+
+    // Register User
+    @PostMapping("/register")
+    public ResponseEntity<String> registerUser(@RequestBody AuthUser authUser) {
+        String response = authenticationService.registerUser(authUser);
+        return ResponseEntity.ok(response);
+    }
+
+    // Login User and Generate JWT Token
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody Map<String, String> request) {
+        String token = authenticationService.authenticateUser(
+                request.get("email"),
+                request.get("password")
+        );
+
+        if (token.equals("User not found!") || token.equals("Invalid email or password!")) {
+            return ResponseEntity.status(401).body(Map.of("error", token));
+        }
+
+        return ResponseEntity.ok(Map.of("message", "Login successful!", "token", token));
+    }
+}
+>>>>>>> bca94c47a627062d85c439b918a3c4e642b5e570
