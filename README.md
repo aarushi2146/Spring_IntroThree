@@ -57,5 +57,28 @@ Spring Data JPA for database interaction<br>
 JWT for token-based authentication<br>
 H2 Database (or any other preferred database for development<br><br>
 
+🔐 Reset & Forgot Password - Question Statement<br><br>
+Objective:<br>
+Implement a secure way for users to reset or recover their passwords in case they forget them. The system should validate user details, securely update passwords, and notify users via email.<br><br>
+
+Forgot Password<br><br>
+📌 Scenario: A user forgets their password and wants to reset it.<br>
+
+📌 Steps to Implement:<br>
+
+The user provides their registered email.<br>
+The system checks if the email exists in the database.<br>
+If the email does not exist, return an error message:<br>
+"Sorry! We cannot find the user email: {email}"<br>
+If the email exists:<br>
+The system updates the password with a new user-provided password.<br>
+The new password is hashed using BCrypt before storing it.<br>
+An email notification is sent confirming the password update.<br>
+Return a success response:<br>
+"Password has been changed successfully!"<br>
+📌 API Endpoint: PUT /auth/forgotPassword/{email}<br><br><br>
+
+
+
 
 -----<br>
